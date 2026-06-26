@@ -14,7 +14,7 @@
 ## 快速开始
 
 ```bash
-cd event-workflow
+cd NearNext
 python -m venv .venv
 .\.venv\Scripts\activate
 pip install -r requirements.txt
