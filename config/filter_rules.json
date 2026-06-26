@@ -1,0 +1,141 @@
+{
+  "version": 1,
+  "description": "Interest-based event filtering. Edit exclude/interests to change rules.",
+  "exclude": {
+    "keywords": [
+      "phd oral",
+      "oral exam",
+      "oral defence",
+      "oral defense",
+      "thesis defense",
+      "thesis defence",
+      "thesis defense",
+      "ma defence",
+      "ma defense",
+      "research proposal presentation",
+      "doctoral candidate",
+      "defending their dissertation",
+      "campus tour",
+      "guided tour of the",
+      "register with me",
+      "course registration",
+      "registration closed",
+      "scholarship info session",
+      "scholarship information",
+      "mcgill innovation fund",
+      "pcard reconciliation",
+      "deadline for",
+      "first aid in the workplace",
+      "transition to clerkship",
+      "course and examination",
+      "thesis-defenses",
+      "grand rounds",
+      "oral defence ecp",
+      "for managers",
+      "staff workshop",
+      "office of research seminar",
+      "body-centered",
+      "off-campus housing",
+      "contemplative walk",
+      "reading group",
+      "mif lunch",
+      "organizational development",
+      "office hours"
+    ],
+    "title_keywords": [
+      "phd oral",
+      "phd research proposal",
+      "campus tour",
+      "register with",
+      "scholarship",
+      "oral exam",
+      "oral defence",
+      "oral defense",
+      "ma defence",
+      "ma defense",
+      "defence:",
+      "defense:",
+      "info session"
+    ]
+  },
+  "interests": {
+    "ai": {
+      "label": "AI",
+      "keywords": [
+        "artificial intelligence",
+        " machine learning",
+        " deep learning",
+        " generative ai",
+        " llm",
+        " large language model",
+        " data science",
+        " neural network",
+        " computer vision",
+        " nlp",
+        " ai ",
+        " ai?",
+        " ai,",
+        " ai.",
+        "age of ai",
+        "precision convergence",
+        "computational"
+      ]
+    },
+    "jobs": {
+      "label": "求职",
+      "keywords": [
+        "career",
+        "job fair",
+        "job search",
+        "recruit",
+        "hiring",
+        "resume",
+        "cv ",
+        "interview",
+        "networking",
+        "startup",
+        "entrepreneur",
+        "founder",
+        "build your startup",
+        "job fair",
+        "career fair",
+        "career services",
+        "co-op",
+        "internship"
+      ]
+    },
+    "music": {
+      "label": "音乐",
+      "keywords": [
+        "music",
+        "concert",
+        "choral",
+        "orchestra",
+        "symphony",
+        "philharmonic",
+        "jazz",
+        "choir",
+        "song",
+        "acoustic",
+        "ensemble"
+      ]
+    },
+    "social": {
+      "label": "社交",
+      "keywords": [
+        "social event",
+        "social-events",
+        "coffee, community",
+        "community gathering",
+        "networking event",
+        "mixer",
+        "fripe",
+        "thrift",
+        "alumni network",
+        "food tour",
+        "charity concert",
+        "summer social"
+      ]
+    }
+  }
+}
