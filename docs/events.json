@@ -1,24 +1,23 @@
 {
-  "run_at": "2026-06-26T14:10:29.596479",
+  "run_at": "2026-06-26T17:27:16.713490",
   "count": 5,
   "window": {
     "start": "2026-06-26",
-    "end": "2026-06-29"
+    "end": "2026-07-02"
   },
   "totals": {
-    "all_events": 24,
+    "all_events": 36,
     "filtered_events": 5,
-    "excluded_events": 19,
-    "retention_rate": 0.2083
+    "excluded_events": 31,
+    "retention_rate": 0.1389
   },
   "by_source": {
-    "mcgill": 4,
-    "concordia": 1
+    "mcgill": 2,
+    "concordia": 3
   },
   "by_interest": {
-    "music": 2,
-    "social": 2,
-    "jobs": 1,
+    "music": 1,
+    "social": 4,
     "ai": 1
   },
   "events": [
@@ -28,14 +27,14 @@
       "start_at": "2026-06-27T19:00:00",
       "end_at": "2026-06-27T21:00:00",
       "location": null,
-      "description": "Join ISS and other fellow international students in the Jazz Festival event which is one of the Summer Socials this year. Together, we will head to the world's largest Jazz Festival right here in Montreal! Come for the tunes, stay for the vibes!",
+      "description": "Join ISS and other fellow international students in the Jazz Festival event which is one of the Summer Socials this year. Together, we will head to the world's largest Jazz Festival right here in Montreal! Come for the tunes, stay for the vibes!",
       "url": "https://www.mcgill.ca/channels/channels/event/summer-social-montreal-jazz-festival-371671",
       "raw_date_text": "Saturday, June 27, 2026 19:00 to 21:00",
       "categories": [
         "International Student Services"
       ],
-      "id": "7d858258-7d2a-47ac-9d73-a09027e1a2d0",
-      "scraped_at": "2026-06-26T14:10:26.282817",
+      "id": "baa42e01-4253-4a82-b95a-545580cf3d35",
+      "scraped_at": "2026-06-26T17:26:59.552452",
       "matched_interests": [
         "music",
         "social"
@@ -57,55 +56,13 @@
       "categories": [
         "International Student Services"
       ],
-      "id": "bafc7c2d-b6b0-4d58-8621-9f5ef8e3fadc",
-      "scraped_at": "2026-06-26T14:10:26.285816",
+      "id": "58f7e007-28c5-42ed-aa90-ab770d440e3d",
+      "scraped_at": "2026-06-26T17:26:59.554452",
       "matched_interests": [
         "social"
       ],
       "interest_labels": [
         "社交"
-      ]
-    },
-    {
-      "source": "mcgill",
-      "title": "Application period for eligibility for guaranteed consideration for admission in September to departments in Graduate Studies...",
-      "start_at": "2025-12-15T00:00:00",
-      "end_at": "2026-06-30T00:00:00",
-      "location": null,
-      "description": "Application period for eligibility for guaranteed consideration for admission in September to departments in Graduate Studies. Note: Each McGill graduate department sets its own application deadlines and requirements. These may vary from year to year. You are advised to consult the relevant department URL or visit the website below at: http://www.mcgill.ca/gradapplicants/programs . NOTE : The Schulich School of Music has an earlier application deadline date of December 1.",
-      "url": "https://www.mcgill.ca/channels/channels/event/application-period-eligibility-guaranteed-consideration-admission-september-departments-graduate-363114",
-      "raw_date_text": "Monday, December 15, 2025 to Tuesday, June 30, 2026",
-      "categories": [
-        "Important dates for students"
-      ],
-      "id": "19029fc4-a4b2-4ddb-9200-b08761efd0b2",
-      "scraped_at": "2026-06-26T14:10:26.292809",
-      "matched_interests": [
-        "music"
-      ],
-      "interest_labels": [
-        "音乐"
-      ]
-    },
-    {
-      "source": "mcgill",
-      "title": "Application period for the Education Minor (for Arts, Science students), Kinesiology Minor (for Science students), and Entrepreneurship Minor (for B.Sc. Kinesiology students)...",
-      "start_at": "2026-06-01T00:00:00",
-      "end_at": "2026-06-30T00:00:00",
-      "location": null,
-      "description": "Application period for the Education Minor (for Arts, Science students), Kinesiology Minor (for Science students), and Entrepreneurship Minor (for B.Sc. Kinesiology students). See the Internships & Student Affairs website for details.",
-      "url": "https://www.mcgill.ca/channels/channels/event/application-period-education-minor-arts-science-students-kinesiology-minor-science-students-and-363266",
-      "raw_date_text": "Monday, June 1, 2026 to Tuesday, June 30, 2026",
-      "categories": [
-        "Important dates for students"
-      ],
-      "id": "91ffcc24-6a08-4a96-a493-4d228244dfef",
-      "scraped_at": "2026-06-26T14:10:26.294807",
-      "matched_interests": [
-        "jobs"
-      ],
-      "interest_labels": [
-        "求职"
       ]
     },
     {
@@ -115,20 +72,66 @@
       "end_at": "2026-06-27T20:00:00",
       "location": "Sir George Williams Campus Engineering, Computer Science and Visual Arts Integrated Complex EV 11.705 (1515 Ste-Catherine St. W.)",
       "description": "As the 9th annual ACM FAccT conference will be held in Montreal from June 25-28, Milieux Institute and Abundant Intelligences will host an off-site evening of AI events and programming.",
-      "url": "https://www.concordia.ca/maps/sgw-campus.html?building=EV",
+      "url": "https://www.concordia.ca/cuevents/main/2026/06/27/facct-at-milieux-an-evening-of-ai-events-and-programming.html",
       "raw_date_text": "Jun. 27 | June 27, 2026, 5 p.m. – 8 p.m.",
       "categories": [
         "campus:SGW",
         "filterCategories:concordia-events-categories:conferences-lectures",
         "filterAudiences:event-audiences:all\n                            event-audiences:concordia-community/students\n                            event-audiences:concordia-community/staff\n                            event-audiences:concordia-community/faculty"
       ],
-      "id": "58cec3e7-61d3-440d-b214-2d521e1097c9",
-      "scraped_at": "2026-06-26T14:10:29.466527",
+      "id": "8a0421eb-ae80-464f-96ff-a61616cabffa",
+      "scraped_at": "2026-06-26T17:26:59.773116",
       "matched_interests": [
         "ai"
       ],
       "interest_labels": [
         "AI"
+      ]
+    },
+    {
+      "source": "concordia",
+      "title": "Spirituali-tea",
+      "start_at": "2026-06-30T14:00:00",
+      "end_at": "2026-06-30T16:00:00",
+      "location": "SGW campus H - Henry F. Hall Building H-608.02 (1455 De Maisonneuve Blvd. W.)",
+      "description": null,
+      "url": "https://www.concordia.ca/cuevents/offices/provost/mfsc/2026/06/30/spiritualitea.html",
+      "raw_date_text": "Jun. 30 | June 30, 2026, 2 p.m. – 4 p.m.",
+      "categories": [
+        "campus:SGW",
+        "filterCategories:concordia-events-categories:social-events",
+        "filterAudiences:event-audiences:concordia-community\n                            event-audiences:concordia-community/faculty\n                            event-audiences:concordia-community/managers\n                            event-audiences:concordia-community/staff\n                            event-audiences:concordia-community/students"
+      ],
+      "id": "608ef7f4-849e-4d3d-ba64-81f959cbd3ed",
+      "scraped_at": "2026-06-26T17:26:59.793105",
+      "matched_interests": [
+        "social"
+      ],
+      "interest_labels": [
+        "社交"
+      ]
+    },
+    {
+      "source": "concordia",
+      "title": "Fripe Concordia",
+      "start_at": "2026-07-02T11:00:00",
+      "end_at": "2026-07-02T18:00:00",
+      "location": "SGW campus LB - J.W. McConnell Building LB-018 (1400 De Maisonneuve Blvd. W.)",
+      "description": "Drop by the on-campus thrift store.",
+      "url": "https://www.concordia.ca/cuevents/offices/vpss/sustainability/2026/07/02/fripe-concordia.html",
+      "raw_date_text": "Jul. 2 | July 2, 2026, 11 a.m. – 6 p.m.",
+      "categories": [
+        "campus:SGW",
+        "filterCategories:concordia-events-categories:social-events, topics:general_interest/sustainability",
+        "filterAudiences:event-audiences:all\n                            event-audiences:concordia-community/students"
+      ],
+      "id": "6a352d4c-f461-4329-bdc9-f1772973cd71",
+      "scraped_at": "2026-06-26T17:26:59.803100",
+      "matched_interests": [
+        "social"
+      ],
+      "interest_labels": [
+        "社交"
       ]
     }
   ]
