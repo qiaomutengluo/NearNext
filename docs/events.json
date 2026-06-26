@@ -1,0 +1,135 @@
+{
+  "run_at": "2026-06-26T14:10:29.596479",
+  "count": 5,
+  "window": {
+    "start": "2026-06-26",
+    "end": "2026-06-29"
+  },
+  "totals": {
+    "all_events": 24,
+    "filtered_events": 5,
+    "excluded_events": 19,
+    "retention_rate": 0.2083
+  },
+  "by_source": {
+    "mcgill": 4,
+    "concordia": 1
+  },
+  "by_interest": {
+    "music": 2,
+    "social": 2,
+    "jobs": 1,
+    "ai": 1
+  },
+  "events": [
+    {
+      "source": "mcgill",
+      "title": "Summer Social: Montreal Jazz Festival",
+      "start_at": "2026-06-27T19:00:00",
+      "end_at": "2026-06-27T21:00:00",
+      "location": null,
+      "description": "Join ISS and other fellow international students in the Jazz Festival event which is one of the Summer Socials this year. Together, we will head to the world's largest Jazz Festival right here in Montreal! Come for the tunes, stay for the vibes!",
+      "url": "https://www.mcgill.ca/channels/channels/event/summer-social-montreal-jazz-festival-371671",
+      "raw_date_text": "Saturday, June 27, 2026 19:00 to 21:00",
+      "categories": [
+        "International Student Services"
+      ],
+      "id": "7d858258-7d2a-47ac-9d73-a09027e1a2d0",
+      "scraped_at": "2026-06-26T14:10:26.282817",
+      "matched_interests": [
+        "music",
+        "social"
+      ],
+      "interest_labels": [
+        "音乐",
+        "社交"
+      ]
+    },
+    {
+      "source": "mcgill",
+      "title": "Summer Social: Parc La Fontaine",
+      "start_at": "2026-06-29T13:00:00",
+      "end_at": "2026-06-29T16:00:00",
+      "location": null,
+      "description": "Join ISS and other fellow international students on the Summer Social: Parc La Fontaine event. Together, we will spend an afternoon at one of Montreal’s most beautiful and lively parks, enjoying its scenic walking paths, ponds, and vibrant summer atmosphere.",
+      "url": "https://www.mcgill.ca/channels/channels/event/summer-social-parc-la-fontaine-372994",
+      "raw_date_text": "Monday, June 29, 2026 13:00 to 16:00",
+      "categories": [
+        "International Student Services"
+      ],
+      "id": "bafc7c2d-b6b0-4d58-8621-9f5ef8e3fadc",
+      "scraped_at": "2026-06-26T14:10:26.285816",
+      "matched_interests": [
+        "social"
+      ],
+      "interest_labels": [
+        "社交"
+      ]
+    },
+    {
+      "source": "mcgill",
+      "title": "Application period for eligibility for guaranteed consideration for admission in September to departments in Graduate Studies...",
+      "start_at": "2025-12-15T00:00:00",
+      "end_at": "2026-06-30T00:00:00",
+      "location": null,
+      "description": "Application period for eligibility for guaranteed consideration for admission in September to departments in Graduate Studies. Note: Each McGill graduate department sets its own application deadlines and requirements. These may vary from year to year. You are advised to consult the relevant department URL or visit the website below at: http://www.mcgill.ca/gradapplicants/programs . NOTE : The Schulich School of Music has an earlier application deadline date of December 1.",
+      "url": "https://www.mcgill.ca/channels/channels/event/application-period-eligibility-guaranteed-consideration-admission-september-departments-graduate-363114",
+      "raw_date_text": "Monday, December 15, 2025 to Tuesday, June 30, 2026",
+      "categories": [
+        "Important dates for students"
+      ],
+      "id": "19029fc4-a4b2-4ddb-9200-b08761efd0b2",
+      "scraped_at": "2026-06-26T14:10:26.292809",
+      "matched_interests": [
+        "music"
+      ],
+      "interest_labels": [
+        "音乐"
+      ]
+    },
+    {
+      "source": "mcgill",
+      "title": "Application period for the Education Minor (for Arts, Science students), Kinesiology Minor (for Science students), and Entrepreneurship Minor (for B.Sc. Kinesiology students)...",
+      "start_at": "2026-06-01T00:00:00",
+      "end_at": "2026-06-30T00:00:00",
+      "location": null,
+      "description": "Application period for the Education Minor (for Arts, Science students), Kinesiology Minor (for Science students), and Entrepreneurship Minor (for B.Sc. Kinesiology students). See the Internships & Student Affairs website for details.",
+      "url": "https://www.mcgill.ca/channels/channels/event/application-period-education-minor-arts-science-students-kinesiology-minor-science-students-and-363266",
+      "raw_date_text": "Monday, June 1, 2026 to Tuesday, June 30, 2026",
+      "categories": [
+        "Important dates for students"
+      ],
+      "id": "91ffcc24-6a08-4a96-a493-4d228244dfef",
+      "scraped_at": "2026-06-26T14:10:26.294807",
+      "matched_interests": [
+        "jobs"
+      ],
+      "interest_labels": [
+        "求职"
+      ]
+    },
+    {
+      "source": "concordia",
+      "title": "FAccT at Milieux : An evening of AI events and programming",
+      "start_at": "2026-06-27T17:00:00",
+      "end_at": "2026-06-27T20:00:00",
+      "location": "Sir George Williams Campus Engineering, Computer Science and Visual Arts Integrated Complex EV 11.705 (1515 Ste-Catherine St. W.)",
+      "description": "As the 9th annual ACM FAccT conference will be held in Montreal from June 25-28, Milieux Institute and Abundant Intelligences will host an off-site evening of AI events and programming.",
+      "url": "https://www.concordia.ca/maps/sgw-campus.html?building=EV",
+      "raw_date_text": "Jun. 27 | June 27, 2026, 5 p.m. – 8 p.m.",
+      "categories": [
+        "campus:SGW",
+        "filterCategories:concordia-events-categories:conferences-lectures",
+        "filterAudiences:event-audiences:all\n                            event-audiences:concordia-community/students\n                            event-audiences:concordia-community/staff\n                            event-audiences:concordia-community/faculty"
+      ],
+      "id": "58cec3e7-61d3-440d-b214-2d521e1097c9",
+      "scraped_at": "2026-06-26T14:10:29.466527",
+      "matched_interests": [
+        "ai"
+      ],
+      "interest_labels": [
+        "AI"
+      ]
+    }
+  ]
+}

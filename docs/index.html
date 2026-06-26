@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NearNext — Campus Events</title>
+    <meta
+      name="description"
+      content="McGill & Concordia campus events filtered by your interests."
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero-inner">
+        <p class="eyebrow">NearNext</p>
+        <h1>校园活动精选</h1>
+        <p class="subtitle">McGill · Concordia · 兴趣过滤后的近期活动</p>
+        <div class="meta" id="meta"></div>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="stats" id="stats" hidden></section>
+
+      <section class="toolbar">
+        <div class="filters" id="source-filters" aria-label="按学校筛选"></div>
+        <div class="filters" id="interest-filters" aria-label="按兴趣筛选"></div>
+        <label class="search">
+          <span class="sr-only">搜索活动</span>
+          <input type="search" id="search" placeholder="搜索标题或描述…" />
+        </label>
+      </section>
+
+      <section id="events" class="events"></section>
+      <p id="empty" class="empty" hidden>没有匹配的活动。</p>
+      <p id="error" class="error" hidden></p>
+    </main>
+
+    <footer class="footer">
+      <p>数据来自 McGill / Concordia 官方活动页，经规则过滤后展示。</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

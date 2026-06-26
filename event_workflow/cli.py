@@ -33,6 +33,19 @@ def build_parser() -> argparse.ArgumentParser:
         default=os.getenv("EVENT_FILTER_RULES", str(DEFAULT_RULES_PATH)),
         help="Path to filter rules JSON",
     )
+    filter_parser.add_argument(
+        "--publish-site",
+        action="store_true",
+        help="After filtering, export docs/ for GitHub Pages",
+    )
+    filter_parser.add_argument("--docs-dir", default="docs")
+
+    publish_parser = subparsers.add_parser(
+        "publish-site",
+        help="Export filtered events to docs/ for GitHub Pages",
+    )
+    publish_parser.add_argument("--data-dir", default=os.getenv("EVENT_DATA_DIR", "data"))
+    publish_parser.add_argument("--docs-dir", default="docs")
 
     run_parser = subparsers.add_parser("run", help="Scrape then analyze")
     run_parser.add_argument("--data-dir", default=os.getenv("EVENT_DATA_DIR", "data"))
@@ -112,6 +125,22 @@ def main(argv: list[str] | None = None) -> int:
         _print("")
         _print(f"Filtered JSON: {config.data_dir}/events_filtered.json")
         _print(f"Stats JSON:    {config.data_dir}/filter_stats.json")
+        if getattr(args, "publish_site", False):
+            from event_workflow.site import publish_site
+
+            events_path = publish_site(data_dir=config.data_dir, docs_dir=Path(args.docs_dir))
+            _print(f"Site data:     {events_path}")
+        return 0
+
+    if args.command == "publish-site":
+        from event_workflow.site import publish_site
+
+        events_path = publish_site(
+            data_dir=config.data_dir,
+            docs_dir=Path(args.docs_dir),
+        )
+        print(f"Published site assets to {Path(args.docs_dir)}")
+        print(f"Events JSON: {events_path}")
         return 0
 
     if args.command == "run":

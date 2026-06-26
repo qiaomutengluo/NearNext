@@ -31,6 +31,9 @@ build-backend = "setuptools.build_meta"
 where = ["."]
 include = ["event_workflow*"]
 
+[tool.setuptools.package-data]
+event_workflow = ["site_assets/*"]
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["."]
