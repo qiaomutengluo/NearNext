@@ -3,6 +3,9 @@ from __future__ import annotations
 import re
 from datetime import date, datetime, time, timedelta
 
+DEFAULT_HORIZON_DAYS = 7
+MAX_EVENT_SPAN_DAYS = 14
+
 MONTHS = {
     "january": 1,
     "february": 2,
@@ -19,10 +22,10 @@ MONTHS = {
 }
 
 
-def scan_window(reference: date | None = None, horizon_days: int = 3) -> tuple[date, date]:
-    """Return inclusive [start, end] for today and the next *horizon_days* days."""
+def scan_window(reference: date | None = None, horizon_days: int = DEFAULT_HORIZON_DAYS) -> tuple[date, date]:
+    """Return inclusive [start, end] spanning *horizon_days* calendar days including today."""
     start = reference or date.today()
-    end = start + timedelta(days=horizon_days)
+    end = start + timedelta(days=horizon_days - 1)
     return start, end
 
 

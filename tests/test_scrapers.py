@@ -23,10 +23,10 @@ def concordia_html() -> str:
 
 
 class TestDateParsing:
-    def test_scan_window_defaults_to_four_days(self) -> None:
-        start, end = scan_window(date(2026, 6, 18), horizon_days=3)
+    def test_scan_window_spans_inclusive_days(self) -> None:
+        start, end = scan_window(date(2026, 6, 18), horizon_days=7)
         assert start == date(2026, 6, 18)
-        assert end == date(2026, 6, 21)
+        assert end == date(2026, 6, 24)
 
     def test_parse_mcgill_single_day_with_time(self) -> None:
         start, end = parse_mcgill_date_text("Thursday, June 18, 2026 07:30 to 08:30")

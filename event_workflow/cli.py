@@ -6,6 +6,7 @@ import os
 import sys
 from pathlib import Path
 
+from event_workflow.dates import DEFAULT_HORIZON_DAYS
 from event_workflow.interest_filter import DEFAULT_RULES_PATH
 from event_workflow.pipeline import EventPipeline, PipelineConfig
 
@@ -16,7 +17,12 @@ def build_parser() -> argparse.ArgumentParser:
 
     scrape_parser = subparsers.add_parser("scrape", help="Scrape events and export JSON")
     scrape_parser.add_argument("--data-dir", default=os.getenv("EVENT_DATA_DIR", "data"))
-    scrape_parser.add_argument("--horizon-days", type=int, default=3)
+    scrape_parser.add_argument(
+        "--horizon-days",
+        type=int,
+        default=DEFAULT_HORIZON_DAYS,
+        help="Inclusive scan window in days, counting today (default: 7)",
+    )
     scrape_parser.add_argument("--keywords", nargs="*", default=[])
     scrape_parser.add_argument("--online-only", action="store_true")
     scrape_parser.add_argument("--in-person-only", action="store_true")
@@ -27,7 +33,12 @@ def build_parser() -> argparse.ArgumentParser:
 
     filter_parser = subparsers.add_parser("filter", help="Apply interest rules and export filtered JSON + stats")
     filter_parser.add_argument("--data-dir", default=os.getenv("EVENT_DATA_DIR", "data"))
-    filter_parser.add_argument("--horizon-days", type=int, default=3)
+    filter_parser.add_argument(
+        "--horizon-days",
+        type=int,
+        default=DEFAULT_HORIZON_DAYS,
+        help="Inclusive stats window in days, counting today (default: 7)",
+    )
     filter_parser.add_argument(
         "--rules",
         default=os.getenv("EVENT_FILTER_RULES", str(DEFAULT_RULES_PATH)),
@@ -49,14 +60,24 @@ def build_parser() -> argparse.ArgumentParser:
 
     run_parser = subparsers.add_parser("run", help="Scrape then analyze")
     run_parser.add_argument("--data-dir", default=os.getenv("EVENT_DATA_DIR", "data"))
-    run_parser.add_argument("--horizon-days", type=int, default=3)
+    run_parser.add_argument(
+        "--horizon-days",
+        type=int,
+        default=DEFAULT_HORIZON_DAYS,
+        help="Inclusive scan window in days, counting today (default: 7)",
+    )
     run_parser.add_argument("--keywords", nargs="*", default=[])
     run_parser.add_argument("--online-only", action="store_true")
     run_parser.add_argument("--in-person-only", action="store_true")
 
     schedule_parser = subparsers.add_parser("schedule", help="Run workflow daily on a schedule")
     schedule_parser.add_argument("--data-dir", default=os.getenv("EVENT_DATA_DIR", "data"))
-    schedule_parser.add_argument("--horizon-days", type=int, default=3)
+    schedule_parser.add_argument(
+        "--horizon-days",
+        type=int,
+        default=DEFAULT_HORIZON_DAYS,
+        help="Inclusive scan window in days, counting today (default: 7)",
+    )
     schedule_parser.add_argument("--daily-at", default=os.getenv("EVENT_SCHEDULE_TIME", "08:00"))
     schedule_parser.add_argument("--keywords", nargs="*", default=[])
     schedule_parser.add_argument("--online-only", action="store_true")
@@ -71,7 +92,7 @@ def _config_from_args(args: argparse.Namespace) -> PipelineConfig:
         rules_path = Path(args.rules)
     return PipelineConfig(
         data_dir=Path(args.data_dir),
-        horizon_days=getattr(args, "horizon_days", 3),
+        horizon_days=getattr(args, "horizon_days", DEFAULT_HORIZON_DAYS),
         keywords=list(getattr(args, "keywords", []) or []),
         online_only=getattr(args, "online_only", False),
         in_person_only=getattr(args, "in_person_only", False),

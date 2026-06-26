@@ -5,12 +5,13 @@ from dataclasses import dataclass, field
 from datetime import date, datetime
 from pathlib import Path
 
-from event_workflow.dates import scan_window
+from event_workflow.dates import DEFAULT_HORIZON_DAYS, scan_window
 from event_workflow.filters import (
     filter_by_date_window,
     filter_by_keywords,
     filter_by_sources,
     filter_exclude_cancelled,
+    filter_exclude_long_span,
     filter_in_person_only,
     filter_online_only,
 )
@@ -33,7 +34,7 @@ def default_sources() -> list[EventSource]:
 @dataclass
 class PipelineConfig:
     data_dir: Path = Path("data")
-    horizon_days: int = 3
+    horizon_days: int = DEFAULT_HORIZON_DAYS
     sources: list[EventSource] = field(default_factory=default_sources)
     keywords: list[str] = field(default_factory=list)
     online_only: bool = False
@@ -77,6 +78,7 @@ class EventPipeline:
         result = filter_by_date_window(result, window_start, window_end)
         if self.config.exclude_cancelled:
             result = filter_exclude_cancelled(result)
+        result = filter_exclude_long_span(result)
         if self.config.keywords:
             result = filter_by_keywords(result, self.config.keywords)
         if self.config.online_only:
@@ -95,6 +97,7 @@ class EventPipeline:
         if not events:
             raise ValueError("No events available for interest filtering")
 
+        events = filter_exclude_long_span(events)
         rules_path = self.config.filter_rules_path or DEFAULT_RULES_PATH
         rules = rules or FilterRules.load(rules_path)
         window_start, window_end = scan_window(

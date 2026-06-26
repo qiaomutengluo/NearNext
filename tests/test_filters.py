@@ -6,6 +6,7 @@ from event_workflow.filters import (
     filter_by_keywords,
     filter_by_sources,
     filter_exclude_cancelled,
+    filter_exclude_long_span,
     filter_in_person_only,
     filter_online_only,
 )
@@ -64,6 +65,35 @@ def test_filter_exclude_cancelled() -> None:
     filtered = filter_exclude_cancelled(events)
     assert len(filtered) == 1
     assert "Cancelled" not in filtered[0].title
+
+
+def test_filter_exclude_long_span_drops_reminders() -> None:
+    events = [
+        _event(title="Weekend workshop"),
+        EventRecord(
+            source="mcgill",
+            title="Application period reminder",
+            start_at=datetime(2025, 12, 15, 0, 0),
+            end_at=datetime(2026, 6, 30, 0, 0),
+            location=None,
+            description=None,
+            url=None,
+        ),
+        EventRecord(
+            source="mcgill",
+            title="Two-week exhibition",
+            start_at=datetime(2026, 6, 1, 0, 0),
+            end_at=datetime(2026, 6, 14, 0, 0),
+            location=None,
+            description=None,
+            url=None,
+        ),
+    ]
+    filtered = filter_exclude_long_span(events)
+    assert [event.title for event in filtered] == [
+        "Weekend workshop",
+        "Two-week exhibition",
+    ]
 
 
 def test_overlaps_window() -> None:

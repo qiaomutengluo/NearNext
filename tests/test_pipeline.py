@@ -37,7 +37,7 @@ def test_pipeline_scrape_uses_window_and_saves(tmp_path: Path, mcgill_html: str,
     events = pipeline.scrape()
 
     assert len(events) == 1
-    mcgill.fetch_events.assert_called_once_with(date(2026, 6, 18), date(2026, 6, 21))
+    mcgill.fetch_events.assert_called_once_with(date(2026, 6, 18), date(2026, 6, 24))
     assert (tmp_path / "events.json").exists()
 
 

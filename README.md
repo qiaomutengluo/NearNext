@@ -11,7 +11,7 @@
 | McGill | [McGill Events](https://www.mcgill.ca/channels/section/all/channel_event) | `event_workflow/sources/mcgill.py` |
 | Concordia | [Concordia Events](https://www.concordia.ca/events.html) | `event_workflow/sources/concordia.py` |
 
-默认爬取窗口为**当日 + 未来 3 日**。新增学校时实现 `EventSource` 并在 `pipeline.py` 中注册即可。
+默认爬取窗口为**含当日共 7 天**（可用 `--horizon-days` 调整）。跨度超过 14 天的长期提醒类条目会在爬取/过滤时自动剔除。新增学校时实现 `EventSource` 并在 `pipeline.py` 中注册即可。
 
 ## 快速开始
 
@@ -23,17 +23,29 @@ pip install -r requirements.txt
 copy .env.example .env   # 填入 AGNES_API_KEY
 ```
 
+## 爬取窗口与数据清洗
+
+| 设置 | 说明 |
+|------|------|
+| `--horizon-days` | 含**今天**在内的连续天数，默认 `7`（一周） |
+| 长期提醒过滤 | `start_at`–`end_at` 跨度 **> 14 天** 的条目自动忽略（多为申请截止提醒，而非单场活动） |
+
+`scrape`、`run`、`filter`、`schedule` 均支持 `--horizon-days`；其中 `filter` 用它计算统计窗口，不改变已爬取的 `events.json`。
+
 ## 命令
 
 ```bash
-# 仅爬取并导出 data/events.json（当日 + 未来 3 日）
+# 爬取并导出 data/events.json（默认含今日共 7 天）
 python -m event_workflow.cli scrape
+
+# 自定义窗口，例如含今日共 14 天
+python -m event_workflow.cli scrape --horizon-days 14
 
 # 对已导出活动调用 LLM 分析
 python -m event_workflow.cli analyze
 
-# 爬取 + 分析
-python -m event_workflow.cli run
+# 爬取 + 分析（同样支持 --horizon-days）
+python -m event_workflow.cli run --horizon-days 10
 
 # 每天定时执行（默认 08:00）
 python -m event_workflow.cli schedule --daily-at 08:00
@@ -44,8 +56,9 @@ python -m event_workflow.cli schedule --daily-at 08:00
 规则配置文件：`config/filter_rules.json`（可随时修改 exclude / interests 关键词）
 
 ```bash
-# 对已导出的 events.json 做兴趣过滤 + 统计
+# 对已导出的 events.json 做兴趣过滤 + 统计（统计窗口默认同为 7 天）
 python -m event_workflow.cli filter
+python -m event_workflow.cli filter --horizon-days 14
 
 # 过滤后同时更新 GitHub Pages 静态页
 python -m event_workflow.cli filter --publish-site
@@ -62,7 +75,7 @@ python -m event_workflow.cli publish-site
 python -m event_workflow.cli analyze --filtered
 ```
 
-过滤逻辑：**先排除** PhD答辩、校园参观、注册事务、考试、奖学金等 → **再保留** 匹配 AI / 求职 / 音乐 / 社交 关键词的活动。
+过滤逻辑：**先排除** 跨度超过 14 天的长期提醒、PhD答辩、校园参观、注册事务、考试、奖学金等 → **再保留** 匹配 AI / 求职 / 音乐 / 社交 关键词的活动。
 
 LLM 分析在规则过滤**之后**运行，用于生成摘要、推荐和去重，不负责硬性剔除。
 
